@@ -1,0 +1,22 @@
+
+
+
+
+
+.container-navbar {
+    
+    display: grid;
+
+}
+
+.social img {
+    display: grid;
+    width: 100%;
+    
+}
+
+.social { 
+    
+    height: 30px;
+    width: 30px;
+}
