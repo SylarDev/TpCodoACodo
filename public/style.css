@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   margin: auto;
   max-width: 100%;
+  margin-bottom: 100px;
 }
 
 .navbar {
@@ -39,4 +40,15 @@ body {
 .product-image {
   max-width: 100%;
   height: auto;
+}
+
+footer {
+  background-color: #313236;
+  color: #aaa;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Opcional: puedes usar 'position: absolute;' en su lugar si prefieres */
+  bottom: 0;
+  width: 100%;
+  z-index: 1; /* Ajusta el valor según sea necesario */
 }
