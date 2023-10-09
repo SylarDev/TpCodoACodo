@@ -19,6 +19,16 @@ body {
   text-decoration: none;
 }
 
+.hora {
+  color: #aaa;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  float: right;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
 .navbar a:hover {
   color: #ffffff;
 }
