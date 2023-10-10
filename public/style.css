@@ -1,36 +1,64 @@
 body {
-  font-family: sans-serif;
-  margin: auto;
-  max-width: 100%;
-  margin-bottom: 100px;
+  font-family: 'Roboto', sans-serif; /* Cambiar a la fuente Roboto o la que prefieras */
+  font-size: 18px; /* Tamaño de fuente en píxeles (ajusta según tus preferencias) */
+}
+
+h1 {
+  font-size: 36px; /* Aumentar el tamaño del título principal */
+  background-color: #F4A261; /* Cambiar el color de fondo */
+  padding: 20px; /* Espaciado interno */
+  color: #fff; /* Cambiar el color del texto */
+}
+
+ul {
+  list-style-type: disc; /* Cambiar el estilo de viñetas */
+}
+
+/* Agregar íconos a los elementos de la lista */
+ul li::before {
+  content: "\2022"; /* Código del ícono de viñeta */
+  color: #2E86AB; /* Cambiar el color de la viñeta */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.textContent {
+  width: 1000px;
+  align-items: center; /* Centrar verticalmente */
 }
 
 .navbar {
-  background-color: #313236;
+  background-color: #2E86AB; /* Cambiar el color de fondo */
   border-radius: 2px;
   max-width: 100%;
+  display: flex; /* Para alinear elementos horizontalmente */
+  justify-content: space-between; /* Espacio uniforme entre elementos */
+  align-items: center; /* Centrar verticalmente */
+  padding: 10px 20px; /* Espaciado interno */
 }
 
+
 .navbar a {
-  color: #aaa;
+  color: #ffffff;
   display: inline-block;
-  font-size: 15px;
+  font-size: 18px;
   padding: 10px;
   text-decoration: none;
 }
 
 .hora {
-  color: #aaa;
-  font-size: 15px;
+  color: #ffffff;
+  font-size: 18px;
   padding: 10px;
   text-decoration: none;
   float: right;
-  margin-top: 0px;
   margin-right: 10px;
 }
 
 .navbar a:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 .products-container {
@@ -53,8 +81,8 @@ body {
 }
 
 footer {
-  background-color: #313236;
-  color: #aaa;
+  background-color: #2E86AB; /* Cambiar el color de fondo del pie de página */
+  color: #fff; /* Cambiar el color del texto */
   text-align: center;
   padding: 10px;
   position: fixed; /* Opcional: puedes usar 'position: absolute;' en su lugar si prefieres */
