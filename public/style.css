@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif; /* Cambiar a la fuente Roboto o la que prefieras */
   font-size: 18px; /* Tamaño de fuente en píxeles (ajusta según tus preferencias) */
+  margin-bottom: 80px; /* Aumenta el margen inferior según sea necesario */
 }
 
 h1 {
@@ -81,12 +82,12 @@ ul li::before {
 }
 
 footer {
-  background-color: #2E86AB; /* Cambiar el color de fondo del pie de página */
-  color: #fff; /* Cambiar el color del texto */
+  background-color: #2E86AB;
+  color: #fff;
   text-align: center;
   padding: 10px;
-  position: fixed; /* Opcional: puedes usar 'position: absolute;' en su lugar si prefieres */
+  position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 1; /* Ajusta el valor según sea necesario */
+  z-index: 1;
 }
