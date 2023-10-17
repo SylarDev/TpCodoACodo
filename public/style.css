@@ -5,10 +5,23 @@ body {
 }
 
 h1 {
+  display: grid;
+  place-items: center;
   font-size: 36px;
   background-color: #F4A261;
   padding: 20px;
   color: #fff;
+  
+}
+.text-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.text1{
+  height: 100px;
+  width: 900px;
 }
 
 ul {
@@ -24,9 +37,20 @@ ul li::before {
   margin-left: -1em;
 }
 
-.textContent {
-  width: 1000px;
-  align-items: center;
+
+.cards-container {
+  display: grid;
+  width: 80%;
+  outline: 2px solid;
+  margin: 80px auto;
+  grid-template-columns: 3fr 3fr; 
+}
+.cards{
+ background-color: #F4A261; 
+ grid-template-columns: 5fr;
+}
+.text{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar {
