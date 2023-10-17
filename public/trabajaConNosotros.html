@@ -12,10 +12,58 @@
       <a href="productos.html">Productos</a>
       <a href="trabajaConNosotros.html">Trabajá con nosotros</a>
       <a href="contactenos.html">Contáctenos</a>
-      <a href="iniciarSesion.html">Iniciar sesión</a>
+      
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
     </div>
     <script src="fechaHora.js"></script>
+
+    <h1>Codo a Codo Construcciones</h1>
+  
+  <p class="slogan2">Si tú sabes lo que vales, ve y consigue lo que mereces.</p>
+  <p>Dejanos tu CV.</p>
+  </p>
+  <div class="formulario">
+
+    <form name="contacForm" action="https://formsubmit.co/maximo252@gmail.com" method="POST">
+      <fieldset class="form-container">
+        <legend>Contacto</legend>
+        <p>
+          <label for="nombre">Nombre<span class="obligatorio">*</span>:</label>
+          <input type="text" name="nombre" id="nombre" size="30" maxlength="50" placeholder="Nombre">
+        </p>
+        <p>
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="Apellido" id="apellido" placeholder="Apellido">
+        </p>
+        <p>
+          <label for="telefono">Telefono<span class="obligatorio">*</span>:</label>
+          <input type="text" name="Telefono" id="telefono" placeholder="telefono">
+        <p>
+          <label for="email">Email<span class="obligatorio">*</span>:</label>
+          <input type="email" name="email" id="email" placeholder="Email">
+        </p>
+
+        <p>
+          <label for="cv">Subi tu CV</label>
+          <input type="file" name="cv" id="cv">
+          
+        </p>
+
+        <input type="button" id="b1" value="Enviar" onclick="validarFormulario()">
+        <p class="aviso">
+          <span class="obligatorio"> * </span>los campos son obligatorios.
+        </p>
+      </fieldset>
+    </form>
+
+  </div>
+
+  <footer>
+    <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
+  </footer>
+  
+  <script src="src/formValidation.js"></script>
+
     <footer>
       <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
     </footer>

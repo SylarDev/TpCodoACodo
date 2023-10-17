@@ -19,7 +19,7 @@
       <a href="productos.html">Productos</a>
       <a href="trabajaConNosotros.html">Trabajá con nosotros</a>
       <a href="contactenos.html">Contáctenos</a>
-      <a href="iniciarSesion.html">Iniciar sesión</a>
+      
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
       <script src="fechaHora.js"></script>
 
@@ -58,6 +58,11 @@
         <p>
           <label for="mensaje">Mensaje<span class="obligatorio">*</span>:</label><br>
           <textarea placeholder="Tu mensaje.." rows="5" cols="25" name="Mensaje"></textarea>
+        </p>
+        <p>Trabaja con nosotros:</p>
+        <p>
+          <label for="cv">Subi tu CV</label>
+          <input type="file" name="cv" id="cv">
         </p>
 
         <input type="button" id="b1" value="Enviar" onclick="validarFormulario()">
