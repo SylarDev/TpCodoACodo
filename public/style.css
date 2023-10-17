@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   margin-bottom: 80px;
+  background-image: url("images/fondo.jpg");
 }
 
 h1 {
@@ -23,6 +24,12 @@ h1 {
   height: 100px;
   width: 900px;
 }
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 ul {
   list-style-type: disc;
@@ -41,7 +48,7 @@ ul li::before {
 .cards-container {
   display: grid;
   width: 80%;
-  outline: 2px solid;
+ 
   margin: 80px auto;
   grid-template-columns: 3fr 3fr; 
 }
