@@ -45,20 +45,45 @@ ul li::before {
 }
 
 
-.cards-container {
+.card-container {
   display: grid;
-  width: 80%;
- 
-  margin: 80px auto;
-  grid-template-columns: 3fr 3fr; 
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 20px;
 }
-.cards{
- background-color: #F4A261; 
- grid-template-columns: 5fr;
+
+.card {
+  background-color: #F4A261;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
 }
-.text{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.card-title {
+  
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
+
+.tex-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-image {
+  width: 300; 
+  height: 300;
+}
+
+
 
 .navbar {
   background-color: #2E86AB;
