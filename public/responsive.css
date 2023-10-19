@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+  /* Estilos para pantallas medianas */
+@media (max-width: 480px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        padding: 20px;
+    }  
+     
+    footer{
+        display: none;
+    }
+}
+  
+  
+  
+  
+
+  
+

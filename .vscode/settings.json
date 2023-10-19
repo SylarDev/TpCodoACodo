@@ -4,6 +4,7 @@
     ],
     "cSpell.enableFiletypes": [
         "!css",
-        "!html"
+        "!html",
+        "!javascript"
     ]
 }
