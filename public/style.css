@@ -21,7 +21,7 @@ h1 {
  
 }
 .text1{
-  height: 100px;
+  height: auto;
   width: 900px;
 }
 .img-container{

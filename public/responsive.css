@@ -8,23 +8,72 @@
 
 
 
-  /* Estilos para pantallas medianas */
-@media (max-width: 480px) {
+  /* Estilos para mobile */
+@media (max-width: 640px) {
     .navbar {
         display: flex;
         flex-direction: column;
         justify-items: center;
         padding: 20px;
-    }  
+    } 
+    .text1{
+        display: block;
+        
+    }
+    .img-container {
+        display: block;
+    }
+
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr;
+ 
+    }
+    .card{
+        width: auto;
+    }
      
     footer{
         display: none;
     }
 }
-  
-  
-  
-  
 
-  
+/*Responsive para tablets*/
+  /* Estilos para mobile */
+  @media (max-width: 1280px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        justify-items: center;
+        padding: 20px;
+      
+      }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        padding: 20px;
+    } 
+    .text1{
+        display: block;
+        
+    }
+    .img-container {
+        display: block;
+    }
+
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr;
+ 
+    }
+    .card{
+        width: auto;
+    }
+     
+    footer{
+        display: none;
+    }
+}
 
