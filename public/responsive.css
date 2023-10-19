@@ -60,7 +60,8 @@
         
     }
     .img-container {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
     .card-container{
