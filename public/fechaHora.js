@@ -18,3 +18,7 @@ actualizarFechaHora();
 setInterval(function() {
     actualizarFechaHora();
 }, 60000); // Actualiza la página cada minuto (60,000 milisegundos)
+
+
+
+
