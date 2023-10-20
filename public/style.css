@@ -137,6 +137,19 @@ ul li::before {
   height: auto;
 }
 
+
+
+.map{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  
+}
+iframe{
+  border: #000000;
+}
+
 footer {
   background-color: #2E86AB;
   color: #fff;
