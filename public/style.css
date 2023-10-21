@@ -130,6 +130,8 @@ ul li::before {
   padding: 10px;
   border: 1px solid #aaa;
   text-align: center;
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan del contenedor */
+  transition: transform 0.3s; /* Agrega una transición suave de 0.3 segundos */
 }
 
 .product-image {
@@ -137,6 +139,10 @@ ul li::before {
   height: auto;
 }
 
+/* Cuando el mouse está sobre el producto, agranda el producto */
+.product:hover {
+  transform: scale(1.1); /* Puedes ajustar el valor para controlar la ampliación */
+}
 
 
 .map{
