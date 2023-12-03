@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>productos</title>
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="trabajaConNosotros.html">Trabajá con nosotros</a>
-        <a href="contactenos.html">Contáctenos</a>
+        <a href="index">Inicio</a>
+        <a href="productos">productos</a>
+        <a href="trabajaConNosotros">Trabajá con nosotros</a>
+        <a href="contactenos">Contáctenos</a>
         
         <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
     </div>
 
-    <h1>Productos de Materiales de Construcción</h1>
+    <h1>productos de Materiales de Construcción</h1>
     <div class="products-container">
         <div class="product">
-            <img class="product-image" src="../static/images/ladrillos.png" alt="Ladrillos 7x14x21">
+            <img class="product-image" src="static/images/ladrillos.png" alt="Ladrillos 7x14x21">
             <h2>Ladrillo común</h2>
             <p>Ladrillos de alta calidad 7x14x21.</p>
             <p>Precio: $200.00 por unidad</p>
@@ -28,7 +28,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/cemento.png" alt="Bolsa de cemento 50kg">
+            <img class="product-image"  src="static/images/cemento.png" alt="Bolsa de cemento 50kg">
             <h2>Cemento Portland</h2>
             <p>Cemento Portland tipo I para proyectos de construcción.</p>
             <p>Precio: $3500.00 por bolsa de 50 kg</p>
@@ -36,7 +36,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/listonMadera.png" alt="Bolsa de cemento 50kg">
+            <img class="product-image"  src="static/images/listonMadera.png" alt="Bolsa de cemento 50kg">
             <h2>Listones de madera</h2>
             <p>Listones de madera de pino de 2x4 pulgadas.</p>
             <p>Precio: $2000.00 los 3 metros lineales</p>
@@ -44,7 +44,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/pvc.png" alt="Tubería PVC pluvial 110x4">
+            <img class="product-image"  src="static/images/pvc.png" alt="Tubería PVC pluvial 110x4">
             <h2>Tubería PVC pluvial 110x4</h2>
             <p>Tubería de PVC resistente para sistemas de drenaje pluvial.</p>
             <p>Precio: $1000.00 los 3 metros lineales</p>
@@ -52,7 +52,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/correaC.png" alt="Correas C 160x60x20x2">
+            <img class="product-image"  src="static/images/correaC.png" alt="Correas C 160x60x20x2">
             <h2>Correas C 160x60x20x2</h2>
             <p>Correas metálicas de chapa plegada tipo "C" 160x60x20x2.</p>
             <p>Precio: $9800.00 por correa de 12 metros lineales</p>
@@ -60,7 +60,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/tanque.png" alt="Tanque de Agua 400 L">
+            <img class="product-image"  src="static/images/tanque.png" alt="Tanque de Agua 400 L">
             <h2>Tanque de Agua 400 L</h2>
             <p>Tanque de almacenamiento de agua de 400 litros.</p>
             <p>Precio: $21000.00 por unidad</p>
@@ -68,7 +68,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/aislante.png" alt="Aislamiento Térmico Polietileno">
+            <img class="product-image"  src="static/images/aislante.png" alt="Aislamiento Térmico Polietileno">
             <h2>Aislamiento Térmico Polietileno</h2>
             <p>Aislante Termico Espuma De Polietileno Aluminizado 10mm X20m</p>
             <p>Precio: $15500.00 por unidad</p>
@@ -76,7 +76,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/piedra.png" alt="Piedra partida 6/20">
+            <img class="product-image"  src="static/images/piedra.png" alt="Piedra partida 6/20">
             <h2>Piedra partida 6/20</h2>
             <p>Piedra de cantera partida para construcción de muros y fachadas.</p>
             <p>Precio: $28000.00 por metro cúbico</p>
@@ -84,7 +84,7 @@
         </div>
         
         <div class="product">
-            <img class="product-image"  src="../static/images/pintura.png" alt="Pintura Latex Interior">
+            <img class="product-image"  src="static/images/pintura.png" alt="Pintura Latex Interior">
             <h2>Pintura Latex Interior</h2>
             <p>Pintura de alta calidad para interiores en varios colores.</p>
             <p>Precio: $19800.00 por unidad de 20 litros</p>

@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="GitLab Pages">
   <title>Codo a Codo Construcciones - Materiales de Construcción</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
@@ -14,10 +14,10 @@
 
   <header>
     <div class="navbar">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="trabajaConNosotros.html">Trabajá con nosotros</a>
-      <a href="contactenos.html">Contáctenos</a>
+      <a href="index">Inicio</a>
+      <a href="productos">productos</a>
+      <a href="trabajaConNosotros">Trabajá con nosotros</a>
+      <a href="contactenos">Contáctenos</a>
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
     </div>
   </header>
@@ -30,7 +30,7 @@
       proporcionar a nuestros clientes los recursos esenciales para llevar a cabo proyectos exitosos.</p>
   </div>
   <div class="img-container">
-    <img class="logo-img" src="../static/images/codoLogo.png" alt="Corralón de Codo a Codo Construcciones Logo" width="400">
+    <img class="logo-img" src="static/images/codoLogo.png" alt="Corralón de Codo a Codo Construcciones Logo" width="400">
   </div>
 
 
@@ -41,18 +41,18 @@
         construcción y materiales de
         alta calidad. Nuestra experiencia y compromiso con la excelencia nos han permitido crecer y expandirnos en el
         mercado.</p>
-      <img src="../static/images/historia.png" alt="Corralón de Codo a Codo Construcciones Historia" width="400"
+      <img src="static/images/historia.png" alt="Corralón de Codo a Codo Construcciones Historia" width="400"
         class="card-image">
     </div>
 
     <div class="card">
-      <h2 class="card-title">Productos y servicios</h2>
+      <h2 class="card-title">productos y servicios</h2>
       <p class="text-content">Ofrecemos una amplia variedad de productos y servicios, desde materiales de construcción
         como ladrillos, cemento
         y hierro, hasta soluciones de construcción como proyectos a medida y asesoramiento técnico. Nuestros productos
         son
         de alta calidad y nuestros servicios son personalizados y adaptados a las necesidades de cada cliente.</p>
-      <img src="../static/images/atencion.png" alt="Codo a Codo Atención" width="400" class="card-image">
+      <img src="static/images/atencion.png" alt="Codo a Codo Atención" width="400" class="card-image">
     </div>
 
     <div class="card">
@@ -61,7 +61,7 @@
         construcción y materiales de
         alta calidad, con un servicio al cliente excepcional. Nos esforzamos por mantener relaciones duraderas y
         satisfactorias con nuestros clientes, y por ser un socio confiable en cada proyecto.</p>
-      <img src="../static/images/servicios.png" alt="Codo a Codo Servicios" width="400" class="card-image">
+      <img src="static/images/servicios.png" alt="Codo a Codo Servicios" width="400" class="card-image">
     </div>
 
     <div class="card">
@@ -71,7 +71,7 @@
         Nuestros colaboradores están comprometidos con la excelencia y la satisfacción del cliente, y trabajan en
         conjunto
         para garantizar el éxito de cada proyecto.</p>
-      <img src="../static/images/equipoTrabajo.jpg" alt="Codo a Codo Construcciones Equipo" width="400" class="card-image">
+      <img src="static/images/equipoTrabajo.jpg" alt="Codo a Codo Construcciones Equipo" width="400" class="card-image">
     </div>
   </div>
 

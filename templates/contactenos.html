@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="GitLab Pages">
   <title>Contacto</title>
-  <link rel="stylesheet" href="contactoStyles.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contactoStyles.css') }}">
 </head>
 
 <body>
@@ -15,10 +15,10 @@
   </div>
   <div class="container-navbar">
     <div class="navbar">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="trabajaConNosotros.html">Trabajá con nosotros</a>
-      <a href="contactenos.html">Contáctenos</a>
+      <a href="index">Inicio</a>
+      <a href="productos">productos</a>
+      <a href="trabajaConNosotros">Trabajá con nosotros</a>
+      <a href="contactenos">Contáctenos</a>
       
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
       <script src="fechaHora.js"></script>
@@ -78,7 +78,7 @@
     <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
   </footer>
   
-  <script src="../static/src/formValidation.js"></script>
+  <script src="static/src/formValidation.js"></script>
 
 
 </body>
