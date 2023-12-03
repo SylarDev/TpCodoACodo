@@ -9,13 +9,13 @@
   <body>
     <div class="navbar">
       <a href="index">Inicio</a>
-      <a href="productos">productos</a>
+      <a href="productos">Productos</a>
       <a href="trabajaConNosotros">Trabajá con nosotros</a>
       <a href="contactenos">Contáctenos</a>
       
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
     </div>
-    <script src="fechaHora.js"></script>
+    <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
 
     <h1>Codo a Codo Construcciones</h1>
   
@@ -62,7 +62,7 @@
     <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
   </footer>
   
-  <script src="static/src/formValidation.js"></script>
+  <script src="{{ url_for('static', filename='src/formValidation.js') }}"></script>
 
     <footer>
       <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>

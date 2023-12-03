@@ -15,7 +15,7 @@
   <header>
     <div class="navbar">
       <a href="index">Inicio</a>
-      <a href="productos">productos</a>
+      <a href="productos">Productos</a>
       <a href="trabajaConNosotros">Trabajá con nosotros</a>
       <a href="contactenos">Contáctenos</a>
       <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="card">
-      <h2 class="card-title">productos y servicios</h2>
+      <h2 class="card-title">Productos y servicios</h2>
       <p class="text-content">Ofrecemos una amplia variedad de productos y servicios, desde materiales de construcción
         como ladrillos, cemento
         y hierro, hasta soluciones de construcción como proyectos a medida y asesoramiento técnico. Nuestros productos
@@ -94,8 +94,8 @@
   <footer>
     <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
   </footer>
-  <script src="fechaHora.js"></script>
-  <script src="scroll.js"></script>
+  <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
+  <script src="{{ url_for('static', filename='src/scroll.js') }}"></script>
 </body>
 
 </html>

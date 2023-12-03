@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>productos</title>
+    <title>Productos</title>
 </head>
 <body>
     <div class="navbar">
         <a href="index">Inicio</a>
-        <a href="productos">productos</a>
+        <a href="productos">Productos</a>
         <a href="trabajaConNosotros">Trabajá con nosotros</a>
         <a href="contactenos">Contáctenos</a>
         
         <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
     </div>
 
-    <h1>productos de Materiales de Construcción</h1>
+    <h1>Productos de Materiales de Construcción</h1>
     <div class="products-container">
         <div class="product">
             <img class="product-image" src="static/images/ladrillos.png" alt="Ladrillos 7x14x21">
@@ -93,7 +93,7 @@
       </div>
      
     
-    <script src="fechaHora.js"></script>
+    <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
     <footer>
         <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
     </footer>
