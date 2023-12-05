@@ -1,28 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Productos</title>
-</head>
-<body>
-    <div class="navbar">
-        <a href="{{ url_for('index') }}">Inicio</a>
-        <a href="{{ url_for('productos') }}">Productos</a>
-        <a href="{{ url_for('trabajaConNosotros') }}">Trabajá con nosotros</a>
-        <a href="{{ url_for('contactenos') }}">Contáctenos</a>
-        
-        <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></span></p>
-    </div>
 
-    <h1>Productos de Materiales de Construcción</h1>
-    
-    <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
-    
-    <footer>
-        <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
-    </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="GitLab Pages">
+  <title>Codo a Codo Construcciones - Materiales de Construcción</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="index">Inicio</a>
+      <a href="productos">Productos</a>
+      <a href="trabajaConNosotros">Trabajá con nosotros</a>
+      <a href="contactenos">Contáctenos</a>
+      <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
+    </div>
+  </header>
+
+  <h1>Codo a Codo Construcciones</h1>
+  <!-- Resto del contenido ... -->
+
+  <div class="table-responsive mx-auto w-60">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <!-- Agrega más columnas según sea necesario -->
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Itera sobre tus productos y muestra cada fila de la tabla -->
+        {% for producto in productos %}
+        <tr>
+          <td>{{ producto.codigo }}</td>
+          <td>{{ producto.descripcion }}</td>
+          <td>{{ producto.cantidad }}</td>
+          <td>{{ producto.precio }}</td>
+          <!-- Agrega más celdas según sea necesario -->
+          <td>
+            <!-- Agrega botones para modificar o borrar el producto -->
+            <a href="{{ url_for('mostrar_producto', codigo=producto.codigo) }}" class="btn btn-info btn-sm">Mostrar</a>
+            <a href="{{ url_for('modificar_producto', codigo=producto.codigo) }}" class="btn btn-warning btn-sm">Modificar</a>
+            <a href="{{ url_for('borrar_producto', codigo=producto.codigo) }}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Resto del contenido ... -->
+
+  <footer>
+    <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
+  </footer>
+  <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
+  <script src="{{ url_for('static', filename='src/scroll.js') }}"></script>
+
+  <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

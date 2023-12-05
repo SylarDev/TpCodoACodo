@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Modificar Producto</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Modificar Producto</h1>
+        
+        <form method="post" action="{{ url_for('modificar_producto_html', codigo=producto.codigo) }}">
+            <div class="form-group">
+                <label for="nueva_descripcion">Nueva Descripción:</label>
+                <input type="text" class="form-control" id="nueva_descripcion" name="nueva_descripcion" value="{{ producto.descripcion }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nueva_cantidad">Nueva Cantidad:</label>
+                <input type="number" class="form-control" id="nueva_cantidad" name="nueva_cantidad" value="{{ producto.cantidad }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nuevo_precio">Nuevo Precio:</label>
+                <input type="text" class="form-control" id="nuevo_precio" name="nuevo_precio" value="{{ producto.precio }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nuevo_proveedor">Nuevo Proveedor:</label>
+                <input type="text" class="form-control" id="nuevo_proveedor" name="nuevo_proveedor" value="{{ producto.proveedor }}" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

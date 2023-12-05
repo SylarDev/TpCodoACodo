@@ -134,7 +134,9 @@ def menu():
 
 @app.route('/productos')
 def productos():
-    return render_template('productos.html')
+    # Obtener la lista de productos desde la instancia de Producto
+    lista_productos = producto_instance.listar_productos()
+    return render_template('productos.html', productos=lista_productos)
 
 @app.route('/trabajaConNosotros')
 def trabajaConNosotros():
@@ -143,6 +145,58 @@ def trabajaConNosotros():
 @app.route('/contactenos')
 def contactenos():
     return render_template('contactenos.html')
+
+
+@app.route('/mostrar_producto/<int:codigo>')
+def mostrar_producto(codigo):
+    # Utiliza el método consultar_producto de la instancia de Producto
+    producto = producto_instance.consultar_producto(codigo)
+
+    # Verifica si el producto existe
+    if producto:
+        return render_template('mostrar_producto.html', producto=producto)
+    else:
+        # Si el producto no existe, puedes renderizar una plantilla de error o redirigir a otra página
+        return render_template('producto_no_encontrado.html')
+
+@app.route('/modificar_producto/<int:codigo>', methods=['GET', 'POST'])
+def modificar_producto(codigo):
+    # Lógica para obtener información del producto basado en el código
+    producto = producto_instance.consultar_producto(codigo)
+
+    # Verifica si el producto existe
+    if not producto:
+        # Si el producto no existe, puedes renderizar una plantilla de error o redirigir a otra página
+        return render_template('producto_no_encontrado.html')
+
+    if request.method == 'POST':
+        # Lógica para manejar el formulario de modificación
+        nueva_descripcion = request.form.get('nueva_descripcion')
+        nueva_cantidad = request.form.get('nueva_cantidad')
+        nuevo_precio = request.form.get('nuevo_precio')
+        nuevo_proveedor = request.form.get('nuevo_proveedor')
+
+        # Lógica para actualizar el producto en la base de datos
+        if producto_instance.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nuevo_proveedor):
+            # Redirige a la página de productos después de la modificación
+            return redirect(url_for('productos'))
+
+    # Si es una solicitud GET o si la modificación es exitosa, renderiza el formulario de modificación
+    return render_template('modificar_producto.html', producto=producto)
+
+@app.route('/borrar_producto/<int:codigo>', methods=['POST'])
+def borrar_producto(codigo):
+    if codigo:
+        producto_existente = producto_instance.consultar_producto(codigo)
+
+        if producto_existente:
+            producto_instance.eliminar_producto(codigo)
+            return jsonify({"mensaje": "Producto eliminado"}), 200
+        else:
+            return jsonify({"mensaje": "Producto no encontrado"}), 404
+    else:
+        return jsonify({"mensaje": "Código no proporcionado"}), 400
+
 
 # @app.route('/agregar_producto', methods=['POST'])
 # def agregar_producto():
