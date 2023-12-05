@@ -1,13 +1,27 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
-from flask_cors import CORS
+# # from flask_cors import CORS
+# from flaskext.mysql import MySQL
+
 import mysql.connector
-from werkzeug.utils import secure_filename
-import os
-import time
+# # from werkzeug.utils import secure_filename
+# # import os
+# # import time
 
 # init
 app = Flask(__name__)
-CORS(app)
+
+# # Mysql Settings
+# mysql = MySQL()
+# app.config['MYSQL_DATABASE_HOST']     = 'localhost'
+# app.config['MYSQL_DATABASE_USER']     = 'root'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'tomba30db'
+# app.config['MYSQL_DATABASE_DB']       = 'flaskcontacts'
+# app.config['MYSQL_DATABASE_TABLE']    = 'productos'
+# mysql.init_app(app)
+
+
+
+# CORS(app)
 
 class Producto:
     
@@ -19,7 +33,7 @@ class Producto:
             user=user,
             password=password
         )
-        self.cursor = self.conn.cursor()
+        self.cursor = self.conn.cursor(dictionary=True)
 
         # Intentamos seleccionar la base de datos
         try:
@@ -46,7 +60,7 @@ class Producto:
         self.cursor.close()
         self.cursor = self.conn.cursor(dictionary=True)
         
-    #----------------------------------------------------------------
+    # ----------------------------------------------------------------
     def agregar_producto(self, codigo, descripcion, cantidad, precio, proveedor):
         # Verificamos si ya existe un producto con el mismo código
         self.cursor.execute(f"SELECT * FROM productos WHERE codigo = {codigo};")
@@ -130,7 +144,7 @@ def trabajaConNosotros():
 def contactenos():
     return render_template('contactenos.html')
 
-producto_instance = Producto(host='localhost', user='root', password='tomba30db', database='miapp')
+producto_instance = Producto(host='localhost', user='root', password='', database='miapp')
 
 # run
 if __name__ == "__main__":
