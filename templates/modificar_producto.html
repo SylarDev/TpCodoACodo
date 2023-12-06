@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Modificar Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Codo a Codo Construcciones</title>
 </head>
+
 <body>
+    <header>
+        <div class="navbar">
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('productos') }}">Productos</a>
+            <a href="{{ url_for('trabajaConNosotros') }}">Trabajá con nosotros</a>
+            <a href="{{ url_for('contactenos') }}">Contáctenos</a>
+            <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></span></p>
+        </div>
+    </header>
+
     <div class="container mt-4">
         <h1>Modificar Producto</h1>
-        
-        <form method="post" action="{{ url_for('modificar_producto_html', codigo=producto.codigo) }}">
+
+        <form method="post" action="{{ url_for('modificar_producto', codigo=producto.codigo) }}">
+            <input type="hidden" name="codigo_modificar" value="{{ producto.codigo }}">        
+
             <div class="form-group">
                 <label for="nueva_descripcion">Nueva Descripción:</label>
-                <input type="text" class="form-control" id="nueva_descripcion" name="nueva_descripcion" value="{{ producto.descripcion }}" required>
+                <input type="text" class="form-control" id="nueva_descripcion" name="nueva_descripcion" value="{{ producto.descripcion }}">
             </div>
+
             <div class="form-group">
                 <label for="nueva_cantidad">Nueva Cantidad:</label>
-                <input type="number" class="form-control" id="nueva_cantidad" name="nueva_cantidad" value="{{ producto.cantidad }}" required>
+                <input type="text" class="form-control" id="nueva_cantidad" name="nueva_cantidad" value="{{ producto.cantidad }}">
             </div>
+
             <div class="form-group">
                 <label for="nuevo_precio">Nuevo Precio:</label>
-                <input type="text" class="form-control" id="nuevo_precio" name="nuevo_precio" value="{{ producto.precio }}" required>
+                <input type="text" class="form-control" id="nuevo_precio" name="nuevo_precio" value="{{ producto.precio }}">
             </div>
+
             <div class="form-group">
                 <label for="nuevo_proveedor">Nuevo Proveedor:</label>
-                <input type="text" class="form-control" id="nuevo_proveedor" name="nuevo_proveedor" value="{{ producto.proveedor }}" required>
+                <input type="text" class="form-control" id="nuevo_proveedor" name="nuevo_proveedor" value="{{ producto.proveedor }}">
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         </form>
     </div>
@@ -38,4 +59,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

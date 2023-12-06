@@ -116,7 +116,6 @@ class Producto:
             print(f"Descripción: {producto['descripcion']}")
             print(f"Cantidad...: {producto['cantidad']}")
             print(f"Precio.....: {producto['precio']}")
-            
             print(f"Proveedor..: {producto['proveedor']}")
             print("-" * 40)
         else:
