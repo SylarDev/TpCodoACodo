@@ -152,15 +152,22 @@ def agregar_producto():
 
     return render_template('agregar_producto.html')
 
-@app.route('/mostrar_producto/<int:codigo>')
-def mostrar_producto(codigo):
+@app.route('/api/productos/<int:codigo>', methods=['GET'])
+def api_mostrar_producto(codigo):
     producto = producto_instance.consultar_producto(codigo)
 
-    # Verifica si el producto existe
+    if producto:
+        return jsonify(producto)
+    else:
+        return jsonify({"error": "Producto no encontrado"}), 404
+    
+@app.route('/mostrar_producto/<int:codigo>')
+def mostrar_producto(codigo):
+    response = app.test_client().get(f'/api/productos/{codigo}')
+    producto = response.json
     if producto:
         return render_template('mostrar_producto.html', producto=producto)
     else:
-        # Si el producto no existe, puedes renderizar una plantilla de error o redirigir a otra página
         return render_template('producto_no_encontrado.html')
 
 @app.route('/modificar_producto/<int:codigo>', methods=['GET', 'POST'])
