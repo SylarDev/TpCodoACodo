@@ -15,17 +15,16 @@
 
   <header>
     <div class="navbar">
-      <a href="index">Inicio</a>
-      <a href="productos">Productos</a>
-      <a href="trabajaConNosotros">Trabajá con nosotros</a>
-      <a href="contactenos">Contáctenos</a>
-      <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('productos') }}">Productos</a>
+      <a href="{{ url_for('trabajaConNosotros') }}">Trabajá con nosotros</a>
+      <a href="{{ url_for('contactenos') }}">Contáctenos</a>
+      <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></span></p>
     </div>
   </header>
 
   <h1>Codo a Codo Construcciones</h1>
-  <!-- Resto del contenido ... -->
-
+  
   <div class="table-responsive mx-auto w-60">
     <table class="table table-bordered">
       <thead class="thead-dark">
@@ -34,8 +33,7 @@
           <th>Descripción</th>
           <th>Cantidad</th>
           <th>Precio</th>
-          <!-- Agrega más columnas según sea necesario -->
-          <th>Acciones</th>
+          <th>Proveedor</th>
         </tr>
       </thead>
       <tbody>
@@ -46,20 +44,30 @@
           <td>{{ producto.descripcion }}</td>
           <td>{{ producto.cantidad }}</td>
           <td>{{ producto.precio }}</td>
+          <td>{{ producto.proveedor }}</td>
           <!-- Agrega más celdas según sea necesario -->
           <td>
-            <!-- Agrega botones para modificar o borrar el producto -->
-            <a href="{{ url_for('mostrar_producto', codigo=producto.codigo) }}" class="btn btn-info btn-sm">Mostrar</a>
-            <a href="{{ url_for('modificar_producto', codigo=producto.codigo) }}" class="btn btn-warning btn-sm">Modificar</a>
-            <a href="{{ url_for('borrar_producto', codigo=producto.codigo) }}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</a>
+            <!-- Agrega formulario para modificar -->
+            <!-- Formulario para modificar -->
+            <form method="post" action="{{ url_for('modificar_producto', codigo=producto.codigo) }}" class="d-inline no-outline">
+              <button type="submit" class="btn btn-warning btn-sm">Modificar</button>
+            </form>
+
+            <!-- Formulario para mostrar (método GET) -->
+            <form method="get" action="{{ url_for('mostrar_producto', codigo=producto.codigo) }}" class="d-inline">
+              <button type="submit" class="btn btn-info btn-sm">Mostrar</button>
+            </form>
+
+            <!-- Formulario para eliminación -->
+            <form method="post" action="{{ url_for('borrar_producto', codigo=producto.codigo) }}" class="d-inline no-outline">
+              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
+            </form>
           </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
-
-  <!-- Resto del contenido ... -->
 
   <footer>
     <p>Contacto: info@codoaconstrucciones.com - &copy; 2023 Codo a Codo Construcciones</p>
