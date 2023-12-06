@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Mostrar Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Codo a Codo Construcciones</title>
 </head>
+<header>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('productos') }}">Productos</a>
+        <a href="{{ url_for('trabajaConNosotros') }}">Trabajá con nosotros</a>
+        <a href="{{ url_for('contactenos') }}">Contáctenos</a>
+      <p class="hora"><span id="hora"></span>&nbsp;<span id="fecha"></p>
+    </div>
+  </header>
 <body>
     <div class="container mt-4">
         <h1>Detalles del Producto</h1>
