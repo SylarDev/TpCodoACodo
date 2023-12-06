@@ -45,7 +45,7 @@ class Producto:
     # ----------------------------------------------------------------
     def agregar_producto(self, codigo, descripcion, cantidad, precio, proveedor):
         # Verificamos si ya existe un producto con el mismo código
-        self.cursor.execute(f"SELECT * FROM productos WHERE codigo = {codigo};")
+        self.cursor.execute("SELECT * FROM productos WHERE codigo = %s;", (codigo,))
         producto_existe = self.cursor.fetchone()
         if producto_existe:
             return False
@@ -53,15 +53,19 @@ class Producto:
         sql = "INSERT INTO productos (codigo, descripcion, cantidad, precio, proveedor) VALUES (%s, %s, %s, %s, %s);"
         valores = (codigo, descripcion, cantidad, precio, proveedor)
 
-        self.cursor.execute(sql, valores)        
-        self.conn.commit()
+        if codigo is not None:
+            self.cursor.execute("SELECT * FROM productos WHERE codigo = %s;", (codigo,))
+            # Resto del código
+        else:
+            self.cursor.execute(sql, valores)        
+            self.conn.commit()
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
 
     def consultar_producto(self, codigo):
         # Consultamos un producto a partir de su código
-        self.cursor.execute(f"SELECT * FROM productos WHERE codigo = {codigo};")
+        self.cursor.execute("SELECT * FROM productos WHERE codigo = %s;", (codigo,))
         return self.cursor.fetchone()
 
     #----------------------------------------------------------------
@@ -127,6 +131,30 @@ def trabajaConNosotros():
 def contactenos():
     return render_template('contactenos.html')
 
+@app.route('/agregar_producto', methods=['GET', 'POST'])
+def agregar_producto():
+    # Lógica para agregar un nuevo producto
+    if request.method == 'POST':
+        # Obtén los datos del formulario y realiza las operaciones necesarias
+        nueva_descripcion = request.form.get('nueva_descripcion')
+        nueva_cantidad = request.form.get('nueva_cantidad')
+        nuevo_precio = request.form.get('nuevo_precio')
+        nuevo_proveedor = request.form.get('nuevo_proveedor')
+
+        # Aquí deberías usar tu instancia de Producto para agregar el nuevo producto
+        producto_instance.agregar_producto(
+            codigo=None,  # Puedes dejar que la base de datos genere el código automáticamente
+            descripcion=nueva_descripcion,
+            cantidad=nueva_cantidad,
+            precio=nuevo_precio,
+            proveedor=nuevo_proveedor
+        )
+
+        # Después de agregar el producto, redirige a la página de productos
+        return redirect(url_for('productos'))
+
+    # Si es una solicitud GET o si la adición es exitosa, renderiza el formulario de adición
+    return render_template('agregar_producto.html')
 
 @app.route('/mostrar_producto/<int:codigo>')
 def mostrar_producto(codigo):
