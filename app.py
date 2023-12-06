@@ -133,17 +133,14 @@ def contactenos():
 
 @app.route('/agregar_producto', methods=['GET', 'POST'])
 def agregar_producto():
-    # Lógica para agregar un nuevo producto
     if request.method == 'POST':
-        # Obtén los datos del formulario y realiza las operaciones necesarias
         nueva_descripcion = request.form.get('nueva_descripcion')
         nueva_cantidad = request.form.get('nueva_cantidad')
         nuevo_precio = request.form.get('nuevo_precio')
         nuevo_proveedor = request.form.get('nuevo_proveedor')
 
-        # Aquí deberías usar tu instancia de Producto para agregar el nuevo producto
         producto_instance.agregar_producto(
-            codigo=None,  # Puedes dejar que la base de datos genere el código automáticamente
+            codigo=None,  
             descripcion=nueva_descripcion,
             cantidad=nueva_cantidad,
             precio=nuevo_precio,
@@ -153,12 +150,10 @@ def agregar_producto():
         # Después de agregar el producto, redirige a la página de productos
         return redirect(url_for('productos'))
 
-    # Si es una solicitud GET o si la adición es exitosa, renderiza el formulario de adición
     return render_template('agregar_producto.html')
 
 @app.route('/mostrar_producto/<int:codigo>')
 def mostrar_producto(codigo):
-    # Utiliza el método consultar_producto de la instancia de Producto
     producto = producto_instance.consultar_producto(codigo)
 
     # Verifica si el producto existe
@@ -170,27 +165,21 @@ def mostrar_producto(codigo):
 
 @app.route('/modificar_producto/<int:codigo>', methods=['GET', 'POST'])
 def modificar_producto(codigo):
-    # Lógica para obtener información del producto basado en el código
     producto = producto_instance.consultar_producto(codigo)
 
     # Verifica si el producto existe
     if not producto:
-        # Si el producto no existe, puedes renderizar una plantilla de error o redirigir a otra página
         return render_template('producto_no_encontrado.html')
 
     if request.method == 'POST':
-        # Lógica para manejar el formulario de modificación
         nueva_descripcion = request.form.get('nueva_descripcion')
         nueva_cantidad = request.form.get('nueva_cantidad')
         nuevo_precio = request.form.get('nuevo_precio')
         nuevo_proveedor = request.form.get('nuevo_proveedor')
 
-        # Lógica para actualizar el producto en la base de datos
         if producto_instance.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nuevo_proveedor):
-            # Redirige a la página de productos después de la modificación
             return redirect(url_for('productos'))
 
-    # Si es una solicitud GET o si la modificación es exitosa, renderiza el formulario de modificación
     return render_template('modificar_producto.html', producto=producto)
 
 
@@ -202,9 +191,9 @@ def borrar_producto(codigo):
 
         if producto_existente:
             producto_instance.eliminar_producto(codigo)
-            return redirect(url_for('productos'))  # Redirige a la página de productos después de la eliminación
+            return redirect(url_for('productos')) 
         else:
-            return render_template('producto_no_encontrado.html')  # O renderiza una plantilla de error
+            return render_template('producto_no_encontrado.html') 
     else:
         return jsonify({"mensaje": "Código no proporcionado"}), 400
 

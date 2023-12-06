@@ -37,7 +37,6 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Itera sobre tus productos y muestra cada fila de la tabla -->
         {% for producto in productos %}
         <tr>
           <td>{{ producto.codigo }}</td>
@@ -45,20 +44,17 @@
           <td>{{ producto.cantidad }}</td>
           <td>{{ producto.precio }}</td>
           <td>{{ producto.proveedor }}</td>
-          <!-- Agrega más celdas según sea necesario -->
           <td>
-            <!-- Agrega formulario para modificar -->
-            <!-- Formulario para modificar -->
             <form method="post" action="{{ url_for('modificar_producto', codigo=producto.codigo) }}" class="d-inline no-outline">
               <button type="submit" class="btn btn-warning btn-sm">Modificar</button>
             </form>
 
-            <!-- Formulario para mostrar (método GET) -->
+
             <form method="get" action="{{ url_for('mostrar_producto', codigo=producto.codigo) }}" class="d-inline">
               <button type="submit" class="btn btn-info btn-sm">Mostrar</button>
             </form>
 
-            <!-- Formulario para eliminación -->
+
             <form method="post" action="{{ url_for('borrar_producto', codigo=producto.codigo) }}" class="d-inline no-outline">
               <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
             </form>
@@ -69,7 +65,6 @@
     </table>
   </div>
 
-  <!-- Agrega el botón para agregar otro producto -->
   <div class="text-center">
     <a href="{{ url_for('agregar_producto') }}" class="btn btn-success btn-lg">Agregar Otro Producto</a>
   </div>
@@ -80,7 +75,7 @@
   <script src="{{ url_for('static', filename='src/fechaHora.js') }}"></script>
   <script src="{{ url_for('static', filename='src/scroll.js') }}"></script>
 
-  <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
