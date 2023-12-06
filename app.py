@@ -193,6 +193,7 @@ def modificar_producto(codigo):
     # Si es una solicitud GET o si la modificación es exitosa, renderiza el formulario de modificación
     return render_template('modificar_producto.html', producto=producto)
 
+
 @app.route('/borrar_producto/<int:codigo>', methods=['POST'])
 def borrar_producto(codigo):
     if codigo:
