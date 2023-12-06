@@ -35,7 +35,7 @@ class Producto:
             cantidad INT NOT NULL,
             precio DECIMAL(10, 2) NOT NULL,
             imagen_url VARCHAR(255),
-            proveedor INT);''')
+            proveedor VARCHAR(255));''')
         self.conn.commit()
 
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
@@ -209,7 +209,7 @@ def borrar_producto(codigo):
 #--------------------------------------------------------------------
 
 
-producto_instance = Producto(host='localhost', user='root', password='', database='miapp')
+producto_instance = Producto(host='localhost', user='root', password='', database='miapp3')
 
 # run
 if __name__ == "__main__":
